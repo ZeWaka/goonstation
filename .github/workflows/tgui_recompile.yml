@@ -17,11 +17,6 @@ jobs:
     name: Rebuild
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        run: |
-          git config --local user.email "${{ env.COMMIT_EMAIL }}"
-          git config --local user.name "${{ env.COMMIT_NAME }}"
-
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -29,6 +24,11 @@ jobs:
           ref: ${{ github.event.client_payload.pr_head_ref }}
           fetch-depth: 25
           token: ${{ env.TOKEN }}
+
+      - name: Setup
+        run: |
+          git config --local user.email "${{ env.COMMIT_EMAIL }}"
+          git config --local user.name "${{ env.COMMIT_NAME }}"
 
       - name: Setup Node
         uses: actions/setup-node@v1

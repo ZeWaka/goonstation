@@ -93,7 +93,7 @@ export const DJPanel = (props, context) => {
             <Button
               icon="broadcast-tower"
               color="red"
-              content="Stop The Radio For Everyone"
+              content="Stop The Radio For Everyone and dab politely"
               onClick={() => act('stop-radio')}
             />
           </Box>

@@ -1,0 +1,15 @@
+name: 'Assign Reviewers'
+
+on:
+  pull_request
+
+jobs:
+  add-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ohnogumi/assign-reviewers@v0.0.1
+        with:
+          # If you assign team for reviewer, you generate a personal access tokens with workflow scope.
+          token: "${{ secrets.GITHUB_TOKEN }}" # "${{ secrets.PERSONAL_TOKEN }}
+          config: ".github/CODEREVIEWERS"

@@ -1,0 +1,5 @@
+
+# ZeWaka
+*.md @ZeWaka
+/.github/ @ZeWaka
+/tools/ @ZeWaka
